@@ -1,0 +1,1 @@
+﻿<h1>ur ajax file was successful if this was loaded with out a full page refress</h1>

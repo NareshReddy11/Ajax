@@ -1,0 +1,35 @@
+﻿<html>  
+<head>  
+<meta content="text/html; charset=utf-8">  
+<title>AJAX JSON by Javatpoint</title>  
+<script type="text/javascript">  
+function load()  
+{  
+   var url = "http://date.jsontest.com/";//use any url that have json data  
+   var request;  
+  
+   if(window.XMLHttpRequest){    
+    request=new XMLHttpRequest();
+   }    
+      
+   request.onreadystatechange  = function(){  
+      if (request.readyState == 4  )  
+      {  
+        var jsonObj = JSON.parse(request.responseText); 
+        document.getElementById("date").innerHTML =  jsonObj.date;  
+        document.getElementById("time").innerHTML = jsonObj.time;  
+      }  
+   }  
+   request.open("GET", url, true);  
+   request.send();  
+}  
+</script>  
+</head>  
+<body>  
+  
+Date: <span id="date"></span><br/>  
+Time: <span id="time"></span><br/>  
+  
+<button type="button" onclick="load()">dont click me</button>  
+</body>  
+</html>  
